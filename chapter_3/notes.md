@@ -38,3 +38,13 @@ Removing by Value
 Using the `remove(val)` allows you to remove the value from the list
 - It's good for when you don't know the index
 - It only removes the _FIRST_ occurence of the value
+
+Sorting lists
+`sort()` &rarr; sorts a list alphabetically
+`sorted(list)` &rarr; temporarily sorts the list but doesn't permanently change the order
+- `reverse=True` returns a list in reverse-alphabetical order & works as valid args for the `sort()` and `sorted(list)` methods
+
+Finding the length of a list 
+- `len(list)` returns the total items in a list (not 0-indexed)
+
+* Index Error: Python can't find value at index
