@@ -61,3 +61,29 @@ _list_ = _list2_[:]
 
 * `list1 = list2` is NOT a copy &rarr; you're having `list1` point to `list2`
     - Any modifications go directly to both lists
+- - - 
+
+### Tuples 
+
+- Values that cannot change are _immutable_.
+**Tuple**: A tuple is essentially an immutable lists 
+
+**Defining a Tuple**
+_Syntax_
+_var_ = (_val_, _val_, ....)
+- - - 
+
+### Style Guide
+
+**Indentation**
+* Use 4 spaces per indentation level 
+    - Improves readability
+    - Set your tab = 4 spaces
+
+**Line Length**
+* Each line should be less than 80 characters 
+    - Limit your comments to 72 characters per line 
+
+**Blank Lines**
+* To group parts of your program visually, use blank lines
+    - Use blank lines to organize your files (but not excessively)
