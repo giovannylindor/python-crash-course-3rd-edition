@@ -58,12 +58,15 @@ if 1 not in vals:
 Boolean expression is just another name for a conditional test 
 - Either `True` or `False`
 - Boolean Vals provide an efficient way to track the state of a program or condition
+- see `boolean_expressions.py`
 
 - - - 
 
 ### `if` Statements
 
 Several `if` statements exist and your choice depends on the number of conditions
+
+- See `voting.py`
 
 **Simple `if` Statements**
 
@@ -77,6 +80,48 @@ if _conditional_test:
 Often, you'll want to take one action when a conditional test passes and a different action in all other cases
 
 * `if-else` is similar to `if`, but the else allows you to define an action(s) that execute when the `if` conditional test fails
+    - See `voting.py`
 
 **`if-elif-else` Chain**
 
+Often you'll need to test more than two situations, and you can use Python's `if-elif-else` chain
+* Python only executes only one block in the chain
+    - Runs each test in order until one passes
+    - See `amusement_park.py`
+
+* You can use as many `elif` blocks in your code as you like
+
+
+**Ommiting the `else` block**
+* Python doesn't require an else block at the end of a `if-elif` chain
+    - Sometimes `else` is useful, other times, it's useful to add another `elif`
+    - `else` is a _catchall statement_ 
+
+
+**TESTING CONDITIONS**
+
+* `if-elif-else` is only appropriate to use when you only need **_One_** test to pass
+
+* Sometimes, it's important to check ALL conditions
+    - In certain scenarios &rarr; use `if` w/ no `elif` or `else` blocks
+        - This makes sense when more than one condition could be `True` & want to act on it
+        - See `toppings_two.py`
+ 
+##### NOTE 
+* If you want 1 block to run &rarr; `if-elif-else` 
+* If you want MORE than 1 block to run &rarr; indepedent `if` statements
+
+
+- - -
+
+### Using `if` Statements w/ Lists
+
+**Checking for Special Items**
+- check `toppings_three.py` 
+
+**Checking That a list isn't empty**
+- check `toppings_three.py` 
+- An empty list == `False`
+
+**Using Multiple Lists**
+- check `toppings_four.py`
