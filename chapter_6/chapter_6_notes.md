@@ -227,3 +227,43 @@ for brand in set(d.values()):
 **NOTE**
 
 * _When working w/ lists, tuples, and dictionaries, if you define a 2 values w/o separating them with a comma, Python concentates them together!!_
+
+##### Nesting
+
+Nesting is when you want to store multiple dicts in a list, and a list inside a dict
+
+**A List of Dictionaries**
+- see `aliens.py`
+- its common to store a num of dicts in a list where each dict contains info about one object
+
+**A List inside a Dictionary**
+- see `pizzas.py`
+- its sometimes useful to put a list inside a dictionary
+    - see `nba.py` for a personal practice instance
+    
+**_NOTE_** when you need to break up a long line in a print statement, choose the appropriate 
+point, end w/ a quotation mark, break to a new line, add an opening quote, then finish your string 
+
+_Example_
+
+```Python
+print(f"You ordered a {pizza['crust']}-crust pizza "
+      "w/ the following: ")
+```
+
+* You can nest a list inside a dict anytime you want more than one val associated w/ a key in a dictionary
+- see `new_lang.py`
+
+**_NOTE_**: Whenever you reference a method without (), Python just shows you what the method is rather than running it. The () is what actually executes the call.
+
+* You shouldn't nest lists and dictionaries too deeply. If youre nesting items too deeply, theres most likely a more _simpler way_ to solve the problem. 
+
+
+**Dictionary Inside Dictionary** 
+* You can nest a dict inside another dict
+    - But your code can get complicated
+
+* If you have several users for a website, each w/ a unique username, you can store the usernames as keys in a dictionary
+    - then u can store info about each user by using a dictionary as the value
+
+- See `many_users.py`
