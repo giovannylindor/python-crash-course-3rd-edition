@@ -22,3 +22,41 @@ see `counting.py` (basic implementation)
 see `parrot_2.py`
 
 **Using Flags**
+Flag: A variable that determines whether or not the entire program is `True`
+* Flag == Signal to a program
+    - If any event needs to end the program, the flag can be set to False
+    - see `parrot3.py`
+```Python
+while active: 
+    message = input(prompt)
+    if message.lower() == 'quit':
+        active = False
+    else: 
+        print(f"Text: {message}")
+```
+
+**Using `break`**
+- To exit a `while` loop, w/o running any code in the loop, use the `break` statement
+    - `break` directs flow of your program
+    - can control what lines are executed and what lines aren't
+- see `cities.py` 
+
+**Using `continue` in a Loop**
+Rather than breaking out of a loop w/o executing the rest of its code, 
+using `continue` can return you to the beginning of the loop
+
+See `counting2.py`
+```Python
+curr = 0
+while curr < 10:
+    curr += 1
+    if curr % 2 == 0:
+        continue
+    print(curr)
+```
+
+**Avoiding Infinite Loops**
+Every loop needs a way to break otherwise, it'll loop forever.
+If your program gets stuck in an infinite loop, pressing `CTRL-C` stop the program from running
+
+* To avoid writing infinite loops, test every loop and make sure it stops when you want it to
