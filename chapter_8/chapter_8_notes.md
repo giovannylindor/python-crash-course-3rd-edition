@@ -119,5 +119,68 @@ As long as you function calls produce the output you want, use the style you fin
 
 * Unmatched Arguments: When you provide fewer or more arguments than a function needs to do its work (`Trackback Error`)
 
+- - - 
 
+##### Return Values 
+
+*  The value the function returns is called a return value. The return statement takes a value from inside a function and sends it back to the line that called the function.
+
+**Optional Arguments**
+See `formatted_name.py`
+```Python
+def get_full_name(firstName, lastName, middleName=''):
+    
+    if middleName:
+        fullName = f"{firstName} {middleName} {lastName}"
+    else:
+        fullName = f"{firstName} {lastName}"
+
+    return fullName.title()
+```
+
+- - - 
+
+##### Returning a Dictionary
+See `person.py`
+```Python
+def build_person(firstName, lastName, age=None): 
+    person = {'first': firstName, 'last': lastName}
+    
+    if age:
+        person['age'] = age
+
+    return person
+```
+
+- - - 
+
+##### Using a Function w/ a While Loop
+See `greeter.py`
+ 
+- - -
+
+##### Passing a List 
+See `greet_users.py`
+Similar to passing an array to a function
+ 
+```Python
+def greet_users(names):
+    """Print a greeting to each user in the list"""
+    for name in names:
+        msg = f'Hello, {name.title()}!'
+        print(msg)
+
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+```
+
+- - -
+
+##### Modifying a List in a Function
+See `printing_models.py`
+
+_NOTE_: If you’re writing a function and notice the function is doing too many different tasks, try to split the code into two functions. Remember that you can always call a function from another function, which can be helpful when splitting a complex task into a series of steps.
+
+- - -
 
