@@ -184,3 +184,191 @@ _NOTE_: If you’re writing a function and notice the function is doing too many
 
 - - -
 
+##### Preventing a Function from Modifying a List
+Using the _slice notation_ makes a copy of a list to send into a function
+It does not affect the original list 
+`function_name(list_name[:])`
+
+- - -
+
+##### Passing an Arbitrary Number of Arguments
+
+Python allows a function to collect an arbitrary number of arguments from the calling statement 
+See `pizza.py`
+
+To have a func collect an arbitrary number of args, paste `*` before the parameter
+
+_Example_
+
+```Python
+def make_pizza(*toppings):
+    """Print a list of toppings"""
+    print(toppings)
+```
+
+* The asterisk tells python to make a tuple containing all the values the function will receive 
+    - This syntax works with no matter how many args a function will receive
+
+- - -
+
+##### Mixing Positional and Arbitrary Arguments
+
+If you want a func to accept several kinds of args, the param that accepts arbitrary args, **MUST BE PLACED LAST in the DEF**
+
+See `pizza.py`
+_Example_
+
+`def make_pizza2(size, *toppings):`
+
+_NOTE_: You'll often see a parameter name `*args` which collects arbitrary positional args
+
+- - - 
+
+##### Using Arbitrary Keyword Arguments
+
+Sometimes you'll accept arbitrary keyword args, but won't know ahead of time the info passed to a function. 
+
+You can write functions that accept K-V pairs 
+See `user_profile.py`
+
+```Python
+def build_profile(first, last, **user_info):
+    """Build a Dictionary containing user information"""
+    user_info['first_name'] = first.title()
+    user_info['last_name'] = last.title()
+    return user_info
+```
+
+* The `**` Tells Python to create a dictionary containing arbitrary key-value pairs
+
+* You can mix positional, keyword, and arbitrary values in different ways when writing your own functions 
+
+_NOTE_: You'll often see a parameter name `**kargs` which collects nonspecific (k-v) keyword args
+
+- - - 
+
+##### Storing your functions in Modules
+
+Functions separate blocks of code from your main program
+You can store your functions in a separate file called _modules_, then import it into your main program 
+
+- An `import` statement tells python to make the code in a module available in the runnning program file.
+
+
+* Storing functions in a seperate file allows you to hide the details of your program code and focus on higher-level logic
+- It allows you to reuse functions in different programs
+- You can share those files w/ other programmers w/o having to share your entire program
+
+**Importing an entire module**
+
+1. Create a module
+- A module is a file that ends w/ `.py` which contains code you want to import
+_Example_ &rarr; take the `pizza.py` file in the `./modules` folder
+
+`pizza.py`
+```Python
+def makePizza(size, *toppings):
+    print(f"Making a {size}-inch pizza w/ the following: ")
+    for topping in toppings:
+        print(f"- {topping.title()}")
+```
+
+2. Make a seperate file in the same directory then import it
+_Example_ &rarr; create `making_pizzas.py` then import `pizza.py`
+
+`making_pizzas.py`
+```Python
+import pizza
+
+pizza.makePizza(16, 'pepperoni', 'sausage', 'extra cheese')
+print()
+pizza.makePizza(16, 'pepperoni')
+```
+
+* `import pizza` tells python to open `pizza.py` and copy all the functions 
+<br>
+
+* To call a function from an imported module, enter the name of the module, followed by the `.functionName()`
+
+- - - 
+
+**Importing Specific Functions**
+
+Syntax for importing a specific function from a module 
+
+`from module_name import function_name`
+
+* You can import as many functions as you want from a module, by sepearating each functions name w/ a comma
+
+_Ex_: `from module_name import function_0, function_1, function_2`
+
+* See `making_pizzas2.py`
+`from pizza import makePizza`
+
+**_NOTE_**: You don't need to use dot notation because the function is explicitly imported
+
+- - - 
+
+**Using `as` to Give a Function an Alias**
+
+If the name of an imported function might conflict w/ another name,
+using an alias will relieve conflicts 
+
+_Example_: `from module_name import function_name as alias`
+
+* See `making_pizzas3.py`
+`from pizza import makePizza as mp`
+
+- - - 
+
+**Using `as to give a Module an Alias**
+
+You can use `as` to provide an alias for a module name
+Doing this allows you to call functions more quickly
+
+* See `making_pizzas4.py` 
+`import pizza as p`
+
+- - - 
+
+**Importing all functions in a Module**
+
+You can tell Python to import every function in a module by using the `*` operator
+
+The `*` in the import tells Pyton to copy every function from a module into your current program 
+* Because of this, you can call each function by name w/o dot notation
+
+See `player.py` and `making_player.py`
+
+**_NOTE_**: It's not best to use this approach when working w/ large modules you didn't write 
+
+**BEST APPROACH**: 
+* Import functions you want
+* Import entire module + use dot notation 
+
+This leads to clear code thats easy to read
+
+- - - 
+
+##### Styling Functions 
+
+* Functions should have **_Descriptive Names_**
+    - Should include lowercase letters & underscores
+    - They help you and others understand what your code is trying to do
+
+* Every function should have a comment explaining what it does
+    - Use """""" Format
+    - Should appear after func def
+
+* If you specify a default val, no spaces should be used on either side of the `=` sign
+    - `def function_name(param0, param1='def')`
+    Same w/ keyword args 
+    - `function_name(value0, param1='val')`
+
+
+* Limit lines to 79 chars 
+
+* If your program/module has more than 1 func, separate each by 2 blank lines to 
+make it easier to read
+
+* All `import`'s should be written at the beginning of a file
