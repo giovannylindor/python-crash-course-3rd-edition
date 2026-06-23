@@ -1,0 +1,36 @@
+class Restaurant:
+
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name.title()
+        self.cuisine_type = cuisine_type.title()
+        self.number_served = 0 
+    
+
+    def describe_restaurant(self):
+        print(f"Our Restaurants name is {self.restaurant_name}"
+              f"\nWe serve {self.cuisine_type}-Style Food!")
+        
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is open!")
+
+    def set_servings(self, servings):
+        if servings >= self.number_served:
+            self.number_served = servings
+        else:
+            print("ERROR")
+    
+    def get_servings(self):
+        return self.number_served
+    
+    def increment_servings(self, servings):
+        self.number_served += servings
+
+
+restaurant = Restaurant('fogo de chao', 'brazillian')
+print(restaurant.get_servings())
+
+restaurant.set_servings(5)
+print(restaurant.get_servings())
+
+restaurant.increment_servings(100)
+print(restaurant.get_servings())
