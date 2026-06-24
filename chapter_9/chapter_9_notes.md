@@ -328,3 +328,130 @@ class ElectricCar(Car):
 - Some are more efficient than others
 
 - It takes practice to find the most efficient representations
+
+- - - 
+
+###### Importing Classes
+
+To keep your files uncluttered, store your classes in modules and import them into your main program
+
+**Importing a Single Class**
+
+`house.py`
+```Python
+class House:
+
+    def __init__(self, size, people):
+        self.size = size
+        self.people = people
+
+    def get_size(self):
+        return self.size 
+    
+    def get_ppl(self):
+        return self.people
+```
+
+`my_house.py`
+```Python
+from house import House 
+
+my_house = House('L', 22)
+```
+
+**Importing Multiple Classes**
+
+`my_house.py`
+
+```Python
+from house import House, Car
+```
+
+
+**Importing All Classes from a Module**
+
+`my_house.py`
+
+```Python
+
+from house import *
+
+```
+
+- This method isn't reccomended
+    1. its helpful to read the imports to get a sense of what classes a program uses
+        - this approach makes it unclear 
+    2. this can also lead to confusion with names in the file
+    - naming conflicts w/ classes w/ the same name in your program file
+    - can lead to errors 
+
+* IF you need to import many classes from a module
+    - Import the entire module 
+    - use the `module_name.ClassName` syntax
+
+
+**Importing a module into a Module**
+
+`modules/electric_car.py`
+
+```Python
+from car import Car
+
+class ElectricCar(Car):
+    """Represents aspects of a car, specific to EV's"""
+
+    def __init__(self, make, model, year):
+        super().__init__(make,model,year)
+        self.battery = super().Battery()
+
+    
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def fill_gas_tank(self):
+        print("EV's don't take GAS!")
+```
+
+`my_cars.py`
+
+```Python
+from car import Car
+from electric_car import ElectricCar
+```
+
+- - - 
+
+##### Using Aliases
+
+* You can use aliases when importing classes
+
+_Example_
+
+```Python
+from electric_car import ElectricCar as EC
+
+my_leaf = EC('nissan', 'leaf', 2024)
+```
+
+**_Giving an entire module an alias_**
+
+```Python
+import electric_car as ec
+my_leaf = ec.ElectricCar('nissan', 'leaf', 2024)
+```
+- - - 
+
+##### Finding your own workflow
+
+Python gives you many options for how to structure code in a large project
+It's important to know them so you can use them in your own project 
+
+* When starting out, keep structure simple
+    - Do everything in one file 
+    - Move classes to separate modules once everything is working
+
+* If you like how modules and files interact, store your classes in modules when starting a project
+
+Find an approach that works, go from there 
+
+- - -
