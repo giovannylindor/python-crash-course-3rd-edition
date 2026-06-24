@@ -455,3 +455,43 @@ It's important to know them so you can use them in your own project
 Find an approach that works, go from there 
 
 - - -
+
+## Python Standard Library
+
+The _Python Standard Library_ is a set of modules included with every Python installation
+
+* You can use an `import` statement at the top of your file
+
+_Example_
+
+* `randint()` takes two ints and returns a random num between the two ints
+* `choice()` takes a list/tuple and returns a randomly chosen element
+
+`pstdl.py`
+```Python
+from random import randint, choice
+
+my_list = [34, 55,6, 466]
+
+print(choice(my_list))
+print(randint(1, 3))
+```
+
+- - - 
+
+##### Styling Classes
+
+* Classes should be written in _CamelCase_
+
+* Every class should have a docstring immediately following the class definition
+    - Brief Description of what the class does
+    - Each module should have docstring describing what classes in a module can be used for
+
+* Use blank lines to organize code
+    - dont use them excessively 
+
+    - Use one blank line between methods
+    - Within module, use 2 blank lines to separate classes
+
+* If you need to import a module from STL, place import for the stl module first
+    - then add blank line and import for the import statement for the module you wrote 
