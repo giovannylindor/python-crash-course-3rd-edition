@@ -1,0 +1,3 @@
+In Python you can create Classes and Objects
+In Python you can specify integers and floats 
+In Python you can create functions 
